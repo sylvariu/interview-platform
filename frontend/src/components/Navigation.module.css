@@ -1,0 +1,7 @@
+.nav_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 96px;
+    background: var(--pink-lavender);
+}

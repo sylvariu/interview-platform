@@ -1,0 +1,17 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+:root {
+    --reseda-green: #6d6943;
+    --van-dyke: #48372f;
+    --pink-lavender: #d8b4c3;
+    --isabelline: #f4f3ee;
+    --isa-darker: #dad8d1;
+
+    --accent-color: var(--reseda-green);
+    --bg-color: #fffefa;
+
+    background: var(--bg-color);
+
+    --button-radius: 1rem;
+}

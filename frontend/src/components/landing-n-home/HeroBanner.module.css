@@ -1,0 +1,136 @@
+.heroBanner {
+    position: relative;
+    width: 100vw;
+    height: 75vh;
+    margin-bottom: 0;
+    overflow: hidden;
+}
+
+/* Цветной прямоугольник с анимацией */
+.heroBg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--reseda-green), var(--pink-lavender));
+    z-index: 1;
+    margin: 0 clamp(30px, 5vw, 200px);
+}
+
+/* Контейнер с текстом + картинкой */
+.heroContent {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 clamp(60px, 15vw, 200px);
+}
+
+/* Левый текстовый блок */
+.heroText {
+    max-width: 600px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;                /* расстояние между h1, p и кнопкой */
+}
+
+.heroText h1 {
+    font-size: 48px;
+    font-weight: 800;
+}
+
+.heroText p {
+    font-size: 18px;
+    opacity: 0.9;
+    line-height: 1.5em;
+    margin-bottom: 20px;
+}
+
+/* Картинка справа */
+.heroImage {
+    margin-left: auto;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    width: 50%;
+}
+
+.heroImage img {
+    width: 550px;
+    max-width: 100%;
+    object-fit: contain;
+    user-select: none;
+    pointer-events: none;
+}
+
+.ctaButton {
+    margin-top: 16px;
+    padding: 16px 32px;
+    font-size: 16px;
+    border-radius: 12px;
+    background-color: var(--pink-lavender);
+    text: var(--isabelline);
+    cursor: pointer;
+    width: 300px;
+}
+
+.ctaButton:hover {
+    background-color: var(--van-dyke);
+}
+
+/* 1400px — крупные ноутбуки */
+@media (max-width: 1400px) {
+    .heroImage img {
+        width: 600px; /* больше, чем на десктопе */
+    }
+
+    .heroContent {
+        padding: 0 100px; /* чуть больше боковых отступов */
+    }
+}
+
+/* 1200px — средние ноуты */
+@media (max-width: 1200px) {
+    .heroImage img {
+        width: 520px;
+    }
+}
+
+/* 1000px — мобильная перестройка макета */
+@media (max-width: 900px) {
+    .heroContent {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 0 40px; /* меньше боковых полей */
+    }
+    .heroBg{
+        margin: 0;
+    }
+
+    .heroText h1 {
+        font-size: 40px;
+    }
+    .heroText {
+        align-items: center;
+    }
+    .heroImage {
+        margin-left: 0;
+        margin-top: 20px;
+        height: auto;
+    }
+
+    .heroImage img {
+        width: 300px;
+    }
+}
+
+@media (max-width: 500px) {
+    .heroText h1 {
+        font-size: 5vh;
+    }
+    .heroImage img {
+        display: none;
+    }
+}
